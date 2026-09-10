@@ -1,0 +1,478 @@
+.menu-nequi {
+  --fondo-suave: #f2f5f9;
+  --fondo-pantalla: #f8fafc;
+  --azul-principal: #0b3d6e;
+  --azul-medio: #1a5f9e;
+  --azul-claro: #2b7bc7;
+  --azul-brillo: rgba(43, 123, 199, 0.18);
+  --borde-pantalla: #c5d4e3;
+  --sombra-marco: rgba(11, 61, 110, 0.22);
+
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(160deg, #e8eef5 0%, var(--fondo-suave) 45%, #edf2f7 100%);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.menu-nequi__marco {
+  width: min(920px, 100%);
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, #dce6f0, #b8c9db);
+  box-shadow:
+    0 24px 48px var(--sombra-marco),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.menu-nequi__pantalla {
+  position: relative;
+  min-height: 26rem;
+  padding: 2.75rem 2.5rem 3rem;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(43, 123, 199, 0.06), transparent 55%),
+    var(--fondo-pantalla);
+  border: 2px solid var(--borde-pantalla);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.85),
+    inset 0 18px 36px rgba(11, 61, 110, 0.04);
+  overflow: hidden;
+}
+
+.menu-nequi__pantalla::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    transparent 18%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.menu-nequi__cabecera {
+  position: relative;
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.menu-nequi__titulo {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--azul-principal);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.menu-nequi__clave-dinamica {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 8.5rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid rgba(26, 95, 158, 0.28);
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #ffffff 0%, #eef4fa 100%);
+  box-shadow:
+    0 6px 14px rgba(11, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.menu-nequi__clave-etiqueta {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--azul-medio);
+}
+
+.menu-nequi__clave-valor {
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--azul-principal);
+}
+
+.menu-nequi__contenido {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.menu-nequi__input {
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  border: 2px solid rgba(26, 95, 158, 0.28);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9fd 100%);
+  box-shadow:
+    inset 0 2px 6px rgba(11, 61, 110, 0.05),
+    0 4px 12px rgba(11, 61, 110, 0.04);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--azul-principal);
+  outline: none;
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.menu-nequi__input::placeholder {
+  color: rgba(26, 95, 158, 0.55);
+}
+
+.menu-nequi__input:focus {
+  border-color: var(--azul-claro);
+  box-shadow:
+    0 0 0 4px rgba(43, 123, 199, 0.15),
+    inset 0 2px 6px rgba(11, 61, 110, 0.05);
+}
+
+.menu-nequi__boton {
+  appearance: none;
+  cursor: pointer;
+  min-width: 12rem;
+  padding: 0.95rem 2.5rem;
+  border: 2px solid rgba(26, 95, 158, 0.28);
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #ffffff 0%, #eef4fa 100%);
+  box-shadow:
+    0 8px 18px rgba(11, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--azul-principal);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.menu-nequi__boton:hover {
+  transform: translateY(-2px);
+  border-color: var(--azul-claro);
+  background: linear-gradient(180deg, #ffffff 0%, #e6f1fb 100%);
+  box-shadow:
+    0 12px 24px var(--azul-brillo),
+    0 0 0 3px rgba(43, 123, 199, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.menu-nequi__boton:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 10px rgba(11, 61, 110, 0.12),
+    inset 0 2px 6px rgba(11, 61, 110, 0.08);
+}
+
+.menu-nequi__boton:focus-visible {
+  outline: none;
+  border-color: var(--azul-claro);
+  box-shadow:
+    0 0 0 4px rgba(43, 123, 199, 0.22),
+    0 10px 22px var(--azul-brillo);
+}
+
+.menu-nequi__cabecera--clave {
+  margin-bottom: 2.5rem;
+}
+
+.menu-nequi__instruccion {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--azul-principal);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.menu-nequi__contenido--clave {
+  gap: 2.5rem;
+  max-width: 22rem;
+}
+
+.menu-nequi__pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.menu-nequi__pin-casilla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 2.5rem;
+}
+
+.menu-nequi__pin-valor {
+  min-height: 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--azul-principal);
+}
+
+.menu-nequi__pin-linea {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(26, 95, 158, 0.45);
+}
+
+.menu-nequi__cabecera--retiro {
+  margin-bottom: 2.5rem;
+}
+
+.menu-nequi__titulo--retiro {
+  font-size: clamp(2rem, 3vw, 3.3rem);
+  letter-spacing: 0.05em;
+}
+
+.menu-nequi__grid-montos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 2.1rem 3.2rem;
+  align-items: center;
+  justify-items: center;
+  width: min(100%, 780px);
+  margin: 0 auto;
+}
+
+.menu-nequi__monto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 290px;
+  height: 118px;
+  padding: 0;
+  border: 4px solid #111111;
+  background: #f8f8f8;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #111111;
+  cursor: pointer;
+  transition: none;
+  text-align: center;
+}
+
+.menu-nequi__monto:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.menu-nequi__monto--otro {
+  grid-column: 1 / 2;
+  width: 100%;
+  max-width: 420px;
+  height: 112px;
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+}
+
+.menu-nequi__custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  width: min(100%, 640px);
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.menu-nequi__custom-label {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  color: var(--azul-principal);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.menu-nequi__custom-input {
+  width: min(100%, 420px);
+  min-height: 80px;
+  padding: 1rem 1.4rem;
+  border: 4px solid #111111;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 700;
+  color: #111111;
+  outline: none;
+}
+
+.menu-nequi__custom-input:focus {
+  box-shadow: 0 0 0 4px rgba(43, 123, 199, 0.14);
+}
+
+.menu-nequi__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.menu-nequi__boton--confirmar,
+.menu-nequi__boton--cancelar {
+  min-width: 190px;
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+}
+
+@media (max-width: 760px) {
+  .menu-nequi__grid-montos {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-nequi__monto {
+    width: min(100%, 320px);
+  }
+
+  .menu-nequi__monto--otro {
+    grid-column: auto;
+  }
+
+  .menu-nequi__acciones {
+    flex-direction: column;
+  }
+}
+
+
+.menu-nequi__teclado {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.menu-nequi__tecla {
+  appearance: none;
+  cursor: pointer;
+  aspect-ratio: 1;
+  min-height: 4.25rem;
+  border: 2px solid rgba(26, 95, 158, 0.28);
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #ffffff 0%, #eef4fa 100%);
+  box-shadow:
+    0 6px 14px rgba(11, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--azul-principal);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.menu-nequi__tecla:hover {
+  transform: translateY(-2px);
+  border-color: var(--azul-claro);
+  background: linear-gradient(180deg, #ffffff 0%, #e6f1fb 100%);
+  box-shadow:
+    0 10px 20px var(--azul-brillo),
+    0 0 0 3px rgba(43, 123, 199, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.menu-nequi__tecla:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 10px rgba(11, 61, 110, 0.12),
+    inset 0 2px 6px rgba(11, 61, 110, 0.08);
+}
+
+.menu-nequi__tecla:focus-visible {
+  outline: none;
+  border-color: var(--azul-claro);
+  box-shadow:
+    0 0 0 4px rgba(43, 123, 199, 0.22),
+    0 8px 18px var(--azul-brillo);
+}
+
+.menu-nequi__tecla--borrar {
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+}
+
+.menu-nequi__tecla-vacia {
+  display: block;
+  aspect-ratio: 1;
+  min-height: 4.25rem;
+}
+
+@media (max-width: 768px) {
+  .menu-nequi__pantalla {
+    padding: 2.25rem 1.5rem 2.5rem;
+  }
+
+  .menu-nequi__cabecera {
+    margin-bottom: 2.5rem;
+  }
+
+  .menu-nequi__clave-dinamica {
+    top: 1rem;
+    right: 1rem;
+    min-width: 7rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .menu-nequi__contenido {
+    gap: 1.5rem;
+  }
+
+  .menu-nequi__boton {
+    width: 100%;
+  }
+
+  .menu-nequi__contenido--clave {
+    gap: 2rem;
+    max-width: 18rem;
+  }
+
+  .menu-nequi__pin {
+    gap: 1.25rem;
+  }
+
+  .menu-nequi__teclado {
+    gap: 0.65rem;
+  }
+
+  .menu-nequi__tecla,
+  .menu-nequi__tecla-vacia {
+    min-height: 3.5rem;
+  }
+}

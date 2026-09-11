@@ -11,7 +11,6 @@ function RetiroNequi() {
   const [montoPersonalizado, setMontoPersonalizado] = useState('')
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [montoconfirmado, setMontoConfirmado] = useState(null);
 
   const volverAMontos = () => {
     setMostrarOtro(false)
@@ -22,10 +21,8 @@ function RetiroNequi() {
     const { valido, mensaje } = validarMonto(monto)
     if (!valido) {
       setError(mensaje);
-      setMontoConfirmado(null);
       return;
     }
-    setMontoConfirmado(monto);
     guardarMonto(monto);
     navigate('/nequi/reporte');
   };
@@ -40,6 +37,7 @@ function RetiroNequi() {
   const manejarConfirmarOtro = () => {
     const monto = Number(montoPersonalizado)
     if (!montoPersonalizado || monto <= 0) {
+      const { mensaje } = validarMonto(monto)
       setError(mensaje)
       return
     }

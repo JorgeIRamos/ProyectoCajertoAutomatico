@@ -9,7 +9,8 @@ function NumeroNequi() {
   const [error, setError] = useState("");
 
   const manejarcambio = (e) => {
-    setNumero(e.target.value);
+    const soloNumeros = e.target.value.replace(/\D/g, "");
+    setNumero(soloNumeros);
     setError("");
   }
 

@@ -273,32 +273,58 @@
   justify-content: center;
   width: 100%;
   max-width: 290px;
-  height: 118px;
-  padding: 0;
-  border: 4px solid #111111;
-  background: #f8f8f8;
-  box-shadow: none;
-  border-radius: 0;
-  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  min-height: 7.5rem;
+  padding: 1.25rem 1rem;
+  border: 2px solid rgba(26, 95, 158, 0.28);
+  border-radius: 0.85rem;
+  background: linear-gradient(180deg, #ffffff 0%, #eef4fa 100%);
+  box-shadow:
+    0 8px 18px rgba(11, 61, 110, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
   font-weight: 700;
   line-height: 1;
-  color: #111111;
+  color: var(--azul-principal);
   cursor: pointer;
-  transition: none;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
   text-align: center;
 }
 
 .menu-nequi__monto:hover {
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-3px);
+  border-color: var(--azul-claro);
+  background: linear-gradient(180deg, #ffffff 0%, #e6f1fb 100%);
+  box-shadow:
+    0 14px 28px var(--azul-brillo),
+    0 0 0 3px rgba(43, 123, 199, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.menu-nequi__monto:active {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 14px rgba(11, 61, 110, 0.12),
+    inset 0 2px 6px rgba(11, 61, 110, 0.08);
+}
+
+.menu-nequi__monto:focus-visible {
+  outline: none;
+  border-color: var(--azul-claro);
+  box-shadow:
+    0 0 0 4px rgba(43, 123, 199, 0.22),
+    0 10px 22px var(--azul-brillo);
 }
 
 .menu-nequi__monto--otro {
   grid-column: 1 / 2;
   width: 100%;
   max-width: 420px;
-  height: 112px;
-  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  min-height: 7rem;
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
 }
 
 .menu-nequi__custom {
@@ -322,19 +348,33 @@
 
 .menu-nequi__custom-input {
   width: min(100%, 420px);
-  min-height: 80px;
+  min-height: 4.5rem;
   padding: 1rem 1.4rem;
-  border: 4px solid #111111;
-  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(26, 95, 158, 0.28);
+  border-radius: 0.85rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9fd 100%);
+  box-shadow:
+    inset 0 2px 6px rgba(11, 61, 110, 0.05),
+    0 4px 12px rgba(11, 61, 110, 0.04);
   text-align: center;
-  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
   font-weight: 700;
-  color: #111111;
+  color: var(--azul-principal);
   outline: none;
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.menu-nequi__custom-input::placeholder {
+  color: rgba(26, 95, 158, 0.55);
 }
 
 .menu-nequi__custom-input:focus {
-  box-shadow: 0 0 0 4px rgba(43, 123, 199, 0.14);
+  border-color: var(--azul-claro);
+  box-shadow:
+    0 0 0 4px rgba(43, 123, 199, 0.15),
+    inset 0 2px 6px rgba(11, 61, 110, 0.05);
 }
 
 .menu-nequi__acciones {
@@ -348,8 +388,10 @@
 
 .menu-nequi__boton--confirmar,
 .menu-nequi__boton--cancelar {
-  min-width: 190px;
-  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  min-width: 12rem;
+  min-height: 3.5rem;
+  padding: 0.95rem 2rem;
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
 }
 
 @media (max-width: 760px) {

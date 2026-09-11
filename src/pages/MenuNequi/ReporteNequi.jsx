@@ -1,4 +1,3 @@
-// components/ReporteNequi/ReporteNequi.jsx
 import { useNavigate } from 'react-router-dom'
 import './menu-nequi.css'
 import { obtenerNumero, limpiarNumero, obtenerMonto, limpiarMonto } from '../../controller/validacion'
@@ -26,14 +25,12 @@ function ReporteNequi() {
     return <p>{resultado.mensaje}</p>
   }
 
-  // Billetes que quedan por denominación después de este retiro
+
   const billetesRestantes = DENOMINACIONES.map((d, i) => {
-    const disponibleAntes = inventario[d] ?? 0 // ← sin dividir entre 1000
+    const disponibleAntes = inventario[d] ?? 0 
     return disponibleAntes - resultado.conteo[i]
   })
 
-  // Cuántos retiros iguales a este se pueden seguir haciendo con el inventario actual
-  // Convierte el array billetesRestantes a un objeto { denominacion: cantidad }
   const inventarioDespuesDeEsteRetiro = {}
     DENOMINACIONES.forEach((d, i) => {
       inventarioDespuesDeEsteRetiro[d] = billetesRestantes[i]
@@ -56,12 +53,12 @@ function ReporteNequi() {
           <section className="menu-nequi__reporte" aria-label="Reporte del retiro">
 
             <div className="menu-nequi__reporte-fila">
-              <span className="menu-nequi__reporte-etiqueta">Número de retiro</span>
+              <h2 className="menu-nequi__reporte-etiqueta">Número de retiro</h2>
               <p>{reporteNumero}</p>
             </div>
 
             <div className="menu-nequi__reporte-fila">
-              <span className="menu-nequi__reporte-etiqueta">Monto retirado</span>
+              <h2 className="menu-nequi__reporte-etiqueta">Monto retirado</h2>
               <p>{monto}</p>
             </div>
 
@@ -90,9 +87,9 @@ function ReporteNequi() {
             </div>
 
             <div className="menu-nequi__reporte-fila">
-              <span className="menu-nequi__reporte-etiqueta">
+              <h2 className="menu-nequi__reporte-subtitulo">
                 Retiros posibles con el inventario actual
-              </span>
+              </h2>
               <p>{prediccion.transaccionesPosibles}</p>
             </div>
 

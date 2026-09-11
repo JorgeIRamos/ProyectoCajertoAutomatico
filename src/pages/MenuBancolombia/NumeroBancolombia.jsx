@@ -9,7 +9,8 @@ function NumeroBancolombia() {
   const [error, setError] = useState("");
 
   const manejarcambio = (e) => {
-    setNumero(e.target.value);
+    const soloNumeros = e.target.value.replace(/\D/g, "");
+    setNumero(soloNumeros);
     setError("");
   }
 
@@ -27,7 +28,7 @@ function NumeroBancolombia() {
       <div className="menu-bancolombia__marco">
         <div className="menu-bancolombia__pantalla">
           <header className="menu-bancolombia__cabecera">
-            <h1 className="menu-bancolombia__titulo">Retiros Bancolombia</h1>
+            <h1 className="menu-bancolombia__titulo">Retiros Cuenta de ahorros</h1>
           </header>
 
           <section className="menu-bancolombia__contenido">

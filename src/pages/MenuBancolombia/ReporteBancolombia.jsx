@@ -1,4 +1,3 @@
-// components/ReporteBancolombia/ReporteBancolombia.jsx
 import { useNavigate } from 'react-router-dom'
 import './menu-bancolombia.css'
 import { obtenerNumero, limpiarNumero, obtenerMonto, limpiarMonto } from '../../controller/validacion'
@@ -25,13 +24,12 @@ function ReporteBancolombia() {
     return <p>{resultado.mensaje}</p>
   }
 
-  // Billetes que quedan por denominación después de este retiro
+
   const billetesRestantes = DENOMINACIONES.map((d, i) => {
     const disponibleAntes = inventario[d] ?? 0
     return disponibleAntes - resultado.conteo[i]
   })
 
-  // Cuántos retiros iguales a este se pueden seguir haciendo con el inventario actual
   const inventarioDespuesDeEsteRetiro = {}
     DENOMINACIONES.forEach((d, i) => {
       inventarioDespuesDeEsteRetiro[d] = billetesRestantes[i]
@@ -53,12 +51,12 @@ function ReporteBancolombia() {
           <section className="menu-alamano__reporte" aria-label="Reporte del retiro">
 
             <div className="menu-alamano__reporte-fila">
-              <span className="menu-alamano__reporte-etiqueta">Número de retiro</span>
+              <h2 className="menu-alamano__reporte-etiqueta">Cuenta de retiro</h2>
               <p>{numero}</p>
             </div>
 
             <div className="menu-alamano__reporte-fila">
-              <span className="menu-alamano__reporte-etiqueta">Monto retirado</span>
+              <h2 className="menu-alamano__reporte-etiqueta">Monto retirado</h2>
               <p>{monto}</p>
             </div>
 
@@ -87,9 +85,9 @@ function ReporteBancolombia() {
             </div>
 
             <div className="menu-alamano__reporte-fila">
-              <span className="menu-alamano__reporte-etiqueta">
+              <h2 className="menu-alamano__reporte-etiqueta">
                 Retiros posibles con el inventario actual
-              </span>
+              </h2>
               <p>{prediccion.transaccionesPosibles}</p>
             </div>
 

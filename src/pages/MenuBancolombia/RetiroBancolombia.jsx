@@ -10,7 +10,6 @@ function RetiroBancolombia() {
   const [mostrarOtro, setMostrarOtro] = useState(false)
   const [montoPersonalizado, setMontoPersonalizado] = useState('')
   const [error, setError] = useState("");
-  const [montoconfirmado, setMontoConfirmado] = useState(null);
   const navigate = useNavigate();
 
   const volverAMontos = () => {
@@ -22,10 +21,8 @@ function RetiroBancolombia() {
     const { valido, mensaje } = validarMonto(monto)
     if (!valido) {
       setError(mensaje);
-      setMontoConfirmado(null);
       return;
     }
-    setMontoConfirmado(monto);
     guardarMonto(monto);
     navigate('/bancolombia/reporte');
   }
@@ -38,6 +35,7 @@ function RetiroBancolombia() {
   const manejarConfirmarOtro = () => {
     const monto = Number(montoPersonalizado)
     if (!montoPersonalizado || monto <= 0) {
+      const { mensaje } = validarMonto(monto)
       setError(mensaje)
       return
     }

@@ -37,6 +37,8 @@ function ReporteBancolombia() {
 
   const prediccion = predecirTransacciones(monto, inventarioDespuesDeEsteRetiro)
 
+  const reporteNumero = '00000' + numero
+
   return (
     <div className="menu-alamano">
       <div className="menu-alamano__marco">
@@ -52,7 +54,7 @@ function ReporteBancolombia() {
 
             <div className="menu-alamano__reporte-fila">
               <h2 className="menu-alamano__reporte-etiqueta">Cuenta de retiro</h2>
-              <p>{numero}</p>
+              <p>{reporteNumero}</p>
             </div>
 
             <div className="menu-alamano__reporte-fila">

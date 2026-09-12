@@ -58,7 +58,13 @@ function RetiroNequi() {
                 </h1>
               </header>
               <section className="menu-nequi__custom">
-                <button onClick={aceptarError}>Aceptar</button>
+                <button
+                  type="button"
+                  className="menu-nequi__boton menu-nequi__boton--confirmar"
+                  onClick={aceptarError}
+                >
+                  Aceptar
+                </button>
               </section>
             </>
           ) : !mostrarOtro ? (

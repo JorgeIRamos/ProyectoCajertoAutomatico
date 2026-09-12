@@ -3,7 +3,7 @@ export const validarCuentaAhorros = (valor) => /^\d{11}$/.test(valor);
 export const validarCuentaAlaMano = (valor) => /^[01]3\d{9}$/.test(valor);
 
 export function validarMonto(monto) {
-  if (!Number.isInteger(monto) || monto <= 0 || monto % 10000 !== 0) {
+  if (!Number.isInteger(monto) || monto <= 0 || monto % 10000 !== 0 || monto > 1000000) {
     return {
       valido: false,
       mensaje: "No se puede procesar este retiro con las denominaciones disponibles.",

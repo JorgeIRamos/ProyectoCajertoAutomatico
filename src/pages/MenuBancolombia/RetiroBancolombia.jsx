@@ -54,7 +54,13 @@ function RetiroBancolombia() {
                 </h1>
               </header>
               <section className="menu-bancolombia__custom">
-                <button onClick={aceptarError}>Aceptar</button>
+                <button
+                  type="button"
+                  className="menu-bancolombia__boton menu-bancolombia__boton--confirmar"
+                  onClick={aceptarError}
+                >
+                  Aceptar
+                </button>
               </section>
             </>
           ) :!mostrarOtro ? (

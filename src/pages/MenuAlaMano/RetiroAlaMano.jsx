@@ -56,7 +56,13 @@ function RetiroAlaMano() {
                 </h1>
               </header>
               <section className="menu-alamano__custom">
-                <button onClick={aceptarError}>Aceptar</button>
+                <button
+                  type="button"
+                  className="menu-alamano__boton menu-alamano__boton--confirmar"
+                  onClick={aceptarError}
+                >
+                  Aceptar
+                </button>
               </section>
             </>
           ) : !mostrarOtro ? (

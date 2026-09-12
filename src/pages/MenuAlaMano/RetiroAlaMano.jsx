@@ -10,7 +10,6 @@ function RetiroAlaMano() {
   const [mostrarOtro, setMostrarOtro] = useState(false)
   const [montoPersonalizado, setMontoPersonalizado] = useState('')
   const [error, setError] = useState("");
-  const [montoconfirmado, setMontoConfirmado] = useState(null);
   const navigate = useNavigate();
 
   const volverAMontos = () => {
@@ -22,10 +21,8 @@ function RetiroAlaMano() {
     const { valido, mensaje } = validarMonto(monto)
     if (!valido) {
       setError(mensaje);
-      setMontoConfirmado(null);
       return;
     }
-    setMontoConfirmado(monto);
     guardarMonto(monto);
     navigate('/alamano/reporte');
   };
@@ -40,6 +37,7 @@ function RetiroAlaMano() {
   const manejarConfirmarOtro = () => {
     const monto = Number(montoPersonalizado)
     if (!montoPersonalizado || monto <= 0) {
+      const { mensaje } = validarMonto(monto)
       setError(mensaje)
       return
     }
@@ -52,12 +50,12 @@ function RetiroAlaMano() {
         <div className="menu-alamano__pantalla">
           {error ? (
             <>
-              <header className="menu-nequi__cabecera menu-nequi__cabecera--retiro">
-                <h1 className="menu-nequi__titulo menu-nequi__titulo--retiro">
+              <header className="menu-alamano__cabecera menu-alamano__cabecera--retiro">
+                <h1 className="menu-alamano__titulo menu-alamano__titulo--retiro">
                   {error}
                 </h1>
               </header>
-              <section className="menu-nequi__custom">
+              <section className="menu-alamano__custom">
                 <button onClick={aceptarError}>Aceptar</button>
               </section>
             </>

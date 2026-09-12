@@ -29,7 +29,7 @@ function MenuPrincipal() {
               className="menu-principal__boton"
               onClick={() => navigate("/bancolombia/numero")}
             >
-              <span className="menu-principal__boton-texto">Bancolombia</span>
+              <span className="menu-principal__boton-texto">Cuenta de ahorro</span>
             </button>
 
             <button

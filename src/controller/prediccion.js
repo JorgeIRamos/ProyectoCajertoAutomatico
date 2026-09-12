@@ -8,7 +8,7 @@ export function predecirTransacciones(montoSolicitado, inv = inventario) {
     return { error: true, mensaje: desglose.mensaje };
   }
 
-  const disponible = DENOMINACIONES.map((d) => inv[d] ?? 0); // ← sin dividir entre 1000
+  const disponible = DENOMINACIONES.map((d) => inv[d] ?? 0); 
   const requerido = desglose.conteo;
 
   let transacciones = 0;
@@ -22,7 +22,7 @@ export function predecirTransacciones(montoSolicitado, inv = inventario) {
 
   const inventarioRestante = {};
   DENOMINACIONES.forEach((d, i) => {
-    inventarioRestante[d] = disponible[i]; // ← también sin dividir
+    inventarioRestante[d] = disponible[i]; 
   });
 
   const montoRemanente = disponible.reduce(

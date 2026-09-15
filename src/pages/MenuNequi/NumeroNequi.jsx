@@ -45,6 +45,9 @@ function NumeroNequi() {
             <button type="button" className="menu-nequi__boton" onClick={manejarenvio}>
               Continuar
             </button>
+            <button type="button" className="menu-nequi__boton" onClick={() => navigate('/')}>
+              Cancelar
+            </button>
           </section>
         </div>
       </div>

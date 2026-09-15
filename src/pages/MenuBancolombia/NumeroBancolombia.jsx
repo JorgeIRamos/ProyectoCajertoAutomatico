@@ -36,6 +36,7 @@ function NumeroBancolombia() {
               type="text"
               className="menu-bancolombia__input"
               placeholder="Digite su número de cuenta"
+              maxLength={11}
               value={numero}
               onChange={manejarcambio}
             />
@@ -43,6 +44,9 @@ function NumeroBancolombia() {
 
             <button type="button" className="menu-bancolombia__boton" onClick={manejarenvio}>
               Continuar
+            </button>
+            <button type="button" className="menu-bancolombia__boton" onClick={() => navigate('/')}>
+              Cancelar
             </button>
           </section>
         </div>

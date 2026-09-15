@@ -85,6 +85,10 @@ function RetiroBancolombia() {
                 >
                   OTRO
                 </button>
+
+                <button type="button" className="menu-bancolombia__monto menu-bancolombia__monto--cancelar" onClick={() => navigate('/')}>
+                  CANCELAR
+                </button>
               </section>
             </>
           ) : (

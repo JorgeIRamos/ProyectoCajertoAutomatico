@@ -117,6 +117,9 @@ function ClaveAlaMano() {
                 →
               </button>
             </div>
+            <button type="button" className="menu-alamano__boton" onClick={() => navigate('/')}>
+              Cancelar
+            </button>
           </section>
         </div>
       </div>

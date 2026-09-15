@@ -89,6 +89,9 @@ function RetiroNequi() {
                 >
                   OTRO
                 </button>
+                <button type="button" className="menu-nequi__monto menu-nequi__monto--cancelar" onClick={() => navigate('/')}>
+                  CANCELAR
+                </button>
               </section>
             </>
           ) : (

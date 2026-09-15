@@ -116,6 +116,9 @@ function ClaveBancolombia() {
               →
             </button>
             </div>
+            <button type="button" className="menu-bancolombia__boton" onClick={() => navigate('/')}>
+              Cancelar
+            </button>
           </section>
         </div>
       </div>

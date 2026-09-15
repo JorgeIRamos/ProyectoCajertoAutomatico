@@ -36,6 +36,7 @@ function NumeroAlaMano() {
               type="text"
               className="menu-alamano__input"
               placeholder="Digite su número de teléfono"
+              maxLength={11}
               value={numero}
               onChange={manejarcambio}
             />
@@ -43,6 +44,9 @@ function NumeroAlaMano() {
 
             <button type="button" className="menu-alamano__boton" onClick={manejarenvio}>
               Continuar
+            </button>
+            <button type="button" className="menu-alamano__boton" onClick={() => navigate('/')}>
+              Cancelar
             </button>
           </section>
         </div>

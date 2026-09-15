@@ -132,6 +132,9 @@ function ClaveNequi() {
             </button>
           </div>
           </section>
+          <button type="button" className="menu-nequi__boton" onClick={() => navigate('/')}>
+            Cancelar
+          </button>
         </div>
       </div>
     </div>

@@ -87,6 +87,10 @@ function RetiroAlaMano() {
                 >
                   OTRO
                 </button>
+
+                <button type="button" className="menu-alamano__monto menu-alamano__monto--cancelar" onClick={() => navigate('/')}>
+                  CANCELAR
+                </button>
               </section>
             </>
           ) : (
